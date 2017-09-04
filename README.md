@@ -19,3 +19,7 @@ Sketches for my little brother and my competition autonomous sumo-bot.
 - (2) Fitec FS90R Continuous Servos w/ Wheels
 - 3.7v 2800mAH Single Cell LiPo Battery
 - Adafruit PowerBoost 1000c Voltage Booster and LiPo Battery Manager
+
+# Prototype Runs
+
+Initial Servo Run and Object Detection: https://www.instagram.com/p/BYmIkLIhEP2/?taken-by=codethebeard
