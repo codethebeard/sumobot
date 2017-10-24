@@ -23,3 +23,7 @@ Sketches for my little brother and my competition autonomous sumo-bot.
 # Prototype Runs
 
 Initial Servo Run and Object Detection: https://www.instagram.com/p/BYmIkLIhEP2/?taken-by=codethebeard
+
+
+# Light Detector
+https://learn.sparkfun.com/tutorials/qrd1114-optical-detector-hookup-guide
