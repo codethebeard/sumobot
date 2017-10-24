@@ -33,9 +33,11 @@ void setup() {
 // ------- MAIN LOOP ------- //
 void loop() {
   if( inRange() ){
+    fullForward();
     Serial.println("FULL FORWARD!");
     delay(15);
   } else {
+    spinAround();
     Serial.println("SPIN AROUND");
     delay(15);
   }
@@ -58,4 +60,15 @@ bool inRange() {
   } else {
     return false;
   }
+}
+
+void fullForward(){
+  Serial.print("GOOOooOOOoOOOoOOOOOOOo!!");
+  digitalWrite(rightWheelPin, HIGH);
+  digitalWrite(leftWheelPin, HIGH);
+}
+
+void spinAround(){
+  Serial.print("TUUUUUUUuuUUUUuUUURnnnnnNNNnnn!!");
+  digitalWrite(rightWheelPin, HIGH);
 }
