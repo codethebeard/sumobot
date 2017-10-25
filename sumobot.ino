@@ -7,9 +7,12 @@
 #define BTN 6
 #define rightWheelPin 3
 #define leftWheelPin 5
+#define leftEdgeSensor A3
+#define rightEdgeSensor A4
 
 bool button_pressed = false; //init button state
 int attack_threshold = 30; //distance in centimeters
+float edge_threshold = 3.0; // Edge detection voltage. Lower is white line detection.
 
 Ultrasonic ultrasonic(ECHO, TRIG);
 Moving_average ma(50,0); //sample rolling average of last 50 readings
@@ -17,7 +20,11 @@ Moving_average ma(50,0); //sample rolling average of last 50 readings
 // ------- PROGRAM SETUP -------- //
 void setup() {
   Serial.begin(9600);
+
+  // Pin Setup
   pinMode(BTN, INPUT_PULLUP);
+  pinMode(leftEdgeSensor, INPUT);
+  pinMode(rightEdgeSensor, INPUT);
 
   // Don't start anything until button is pressed
   while (button_pressed == false){
@@ -54,6 +61,21 @@ bool inRange() {
   Serial.print(" : ");
 
   if( distance <= attack_threshold && distance != 0 ){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
+ * Edge Detection
+ */
+bool detectEdge(pin) {
+  // convert analog signal to voltage.
+  int proximityADC = analogRead(pin);
+  float proximityV = (float)proximityADC * 5.0 / 1023.0;
+  
+  if( proximityV <= edge_threshold){
     return true;
   } else {
     return false;
