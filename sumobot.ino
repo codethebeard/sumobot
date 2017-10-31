@@ -10,6 +10,7 @@
 #define leftEdgeSensor A3
 #define rightEdgeSensor A4
 #define EYES 12
+#define BEEPER 10
 
 bool button_pressed = false; //init button state
 int attack_threshold = 30; //distance in centimeters
@@ -27,6 +28,7 @@ void setup() {
   pinMode(leftEdgeSensor, INPUT);
   pinMode(rightEdgeSensor, INPUT);
   pinMode(EYES, OUTPUT);
+  pinMode(BEEPER, OUTPUT);
 
   // Don't start anything until button is pressed
   while (button_pressed == false){
@@ -36,7 +38,9 @@ void setup() {
     }
   }
   // Wait the regulated 3 seconds
+  digitalWrite(BEEPER, "HIGH");
   delay(3000);
+  digitalWrite(BEEPER, "LOW");
 }
 
 // ------- MAIN LOOP ------- //
