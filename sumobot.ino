@@ -81,3 +81,31 @@ bool detectEdge(pin) {
     return false;
   }
 }
+
+/**
+ * Move Robot Forward
+ */
+void forward(){
+
+}
+
+/**
+ * Move Robot Left by degrees
+ */
+void left(deg){
+
+}
+
+/**
+ * Move Robot Right by degrees
+ */
+void right(deg){
+
+}
+
+/**
+ * Turn Around
+ */
+void turnAround(){
+
+}
