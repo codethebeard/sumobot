@@ -9,6 +9,7 @@
 #define leftWheelPin 5
 #define leftEdgeSensor A3
 #define rightEdgeSensor A4
+#define EYES 12
 
 bool button_pressed = false; //init button state
 int attack_threshold = 30; //distance in centimeters
@@ -25,6 +26,7 @@ void setup() {
   pinMode(BTN, INPUT_PULLUP);
   pinMode(leftEdgeSensor, INPUT);
   pinMode(rightEdgeSensor, INPUT);
+  pinMode(EYES, OUTPUT);
 
   // Don't start anything until button is pressed
   while (button_pressed == false){
@@ -46,6 +48,11 @@ void loop() {
     Serial.println("SPIN AROUND");
     delay(15);
   }
+
+  digitalWrite(EYES, "HIGH");
+  delay(500);
+  digitalWrite(EYES, "LOW");
+  delay(500);
 }
 
 /**
